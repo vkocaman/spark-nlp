@@ -123,7 +123,7 @@ class Finisher(override val uid: String)
         .filter(_.dataType == ArrayType(Annotation.dataType))
         .map(_.name):_*)
 
-    if flattened.schema.fieldNames.contains($(explodedCol)) 
+    if (flattened.schema.fieldNames.contains($(explodedCol))) 
       /* if explodedCol is not specified, it will be empty as a default and 
     ignored as it's already not in the filed names. 
     So, any string that's not inside filednames will be ignored and will not trigger anything.
